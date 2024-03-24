@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    .outer-space {
+      background-color: rgb(175, 164, 209);
+      /* z-index: -1; */
+      border-radius: 25px;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .top-box {
+  width: 78.5%;
+  height: 19.5%;
+  background-color: rgb(156, 104, 104);
+  /* overflow: auto; */
+  top: 1%;
+  left: 10.7%;
+  position: absolute; /* relative to outer-space */
+  margin: 0.5%;
+}
+.left-box {
+  width: 10%;
+  height: 60%;
+  background-color: rgb(156, 104, 104);
+  position: absolute;
+  top: 20%;
+  left: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.right-box {
+  width: 10%;
+  height: 60%;
+  background-color: rgb(156, 104, 104);
+  position: absolute;
+  top: 20%;
+  right: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.bottom-box {
+  width: 78.5%;
+  height: 19.5%;
+  background-color: rgb(156, 104, 104);
+  position: absolute;
+  bottom: 1%;
+  right: 10.7%;
+  /* overflow: auto; */
+}
+.top-inner {
+    /* border: 1px;
+    border-radius: 10px; */
+    height: 100%;
+    display: flex;
+  }
+  .bottom-inner {
+    /* border: 1px;
+    border-radius: 10px; */
+    height: 100%;
+    display: flex;
+  }
+  /* .left-inner {
+    width: 100%;
+    height :27%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  } */
+  .topc1 {
+    background-color: rgb(115, 224, 197);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.18vw solid black;
+    flex: 1;
+  }
+  .topc2{
+    flex: 1; 
+    background-color: rgb(126, 51, 116);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.18vw solid black;
+    border: 0.18vw solid black;
+  }
+  .topc3{
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.18vw solid black;
+    background-color: rgb(175, 18, 112);
+  }
+  .topc4{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.18vw solid black;
+    background-color: rgb(174, 209, 77);
+  }
+  .topc5{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.18vw solid black; 
+    background-color: rgb(198, 39, 158);
+  }
+  .topc6{
+    flex: 0.7; 
+    background-color: rgb(52, 137, 163);
+  }
+  .topc7{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.18vw solid black; 
+    background-color: rgb(175, 18, 112);
+  }
+  .topc8{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.18vw solid black; 
+    background-color: rgb(158, 115, 224);
+  }
+  .bottomc2{
+    background-color: aqua;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.18vw solid black; 
+  }
+  .bottomc3{
+    background-color: rgb(158, 115, 224);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.18vw solid black; 
+  }
+  .bottomc4{
+    width: 8%;
+    background-color: rgb(79, 160, 65);
+  }
+  .bottomc5{
+    background-color: rgb(100, 82, 126);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.18vw solid black; 
+  }
+  .bottomc6{
+    background-color: rgb(137, 73, 82);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.18vw solid black; 
+  }
+  .bottomc7{
+    background-color: rgb(158, 115, 224);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.18vw solid black; 
+  }
+  .bottomc8{
+    background-color: rgb(174, 209, 77);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.18vw solid black; 
+  }
+  .bottomc9{
+    background-color: rgb(142, 48, 146);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.18vw solid black;
+  }
+  .leftc1,.rightc1 {
+    /* top : 20%; */
+    background-color: aqua;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0.18vw solid black;
+  }
+  .rightc2{
+    background-color: rgb(79, 160, 65);
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0.18vw solid black;
+  }
+  .leftc2 {
+    flex: 0.65;
+    background-color: rgb(163, 34, 92);
+  }
+  .leftc3 {
+    flex: 1;
+    background-color: rgb(38, 104, 132);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0.18vw solid black;
+  }
+  .rightc3 {
+    height :19%;
+    background-color: rgb(41, 28, 180);
+  }
+  .leftc4 {
+    flex: 1;
+    /* border: 0.2vw;
+    border-radius: 10px; */
+    background-color: rgb(174, 209, 77);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0.18vw solid black;
+  }
+  .rightc4 {
+    background-color: rgb(175, 18, 112);
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0.18vw solid black;
+  }
+  .cont-text-16 {
+    position: absolute;
+    left: 3%;
+    top: 53%;
+    font-size: 2vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+  .cont-text-17 {
+    position: absolute;
+    left: 13.8%;
+    top: 53%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+  .cont-text-18 {
+    position: absolute;
+    left: 29%;
+    top: 53%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-19 {
+    position: absolute;
+    left: 42.5%;
+    top: 53%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-20 {
+    position: absolute;
+    left: 56%;
+    top: 53%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-21 {
+    position: absolute;
+    transform: translate(-30%, 06%) rotate(-55deg);
+    transform-origin: 0 0;
+    left: 69%;
+    top: 53%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-22 {
+    position: absolute;
+    left: 75.5%;
+    top: 53%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-23 {
+    position: absolute;
+    left: 90%;
+    top: 53%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-14 {
+    position: absolute;
+    transform: rotate(90deg);
+    left: 58%;
+    top: 5%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-13 {
+    position: absolute;
+    transform: rotate(90deg);
+    left: 50%;
+    top: 31.5%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-12 {
+    position: absolute;
+    transform: translate(10%,79%) rotate(55deg);
+    left: 3%;
+    top: 48.5%;
+    font-size: 1.8vw;
+  }
+  .cont-text-11 {
+    position: absolute;
+    transform: rotate(90deg);
+    left: 61%;
+    top: 75%;
+    font-size: 1.6vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    /* white-space: nowrap; */
+  }
+  .cont-text-25 {
+    position: absolute;
+    transform: rotate(270deg);
+    right: 64%;
+    top: 8%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .cont-text-26 {
+    position: absolute;
+    transform: rotate(270deg);
+    right: 64%;
+    top: 32%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-27 {
+    position: absolute;
+    transform: translate(10%,79%) rotate(-55deg);
+    right: 25%;
+    top: 49%;
+    font-size: 1.8vw;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .cont-text-28 {
+    position: absolute;
+    transform: rotate(270deg);
+    right: 64%;
+    top: 75%;
+    font-size: 1.75vw;
+  }
+  .cont-text-9 {
+    position: absolute;
+    left: 3%;
+    bottom: 56%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-8 {
+    position: absolute;
+    left: 15.6%;
+    bottom: 56%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-7 {
+    position: absolute;
+    left: 30%;
+    bottom: 56%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-6 {
+    position: absolute;
+    left: 41.5%;
+    bottom: 56%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-5 {
+    position: absolute;
+    left: 53.5%;
+    bottom: 56%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-4 {
+    position: absolute;
+    left: 68.5%;
+    bottom: 0;
+    transform: translate(-30%, 80%) rotate(-55deg);
+    transform-origin: 0 0;
+    font-size: 1.75vw;
+  }
+  .cont-text-3 {
+    position: absolute;
+    left: 78%;
+    bottom: 56%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-2 {
+    position: absolute;
+    left: 90%;
+    bottom: 56%;
+    font-size: 1.75vw;
+    text-overflow: ellipsis; /* Show ellipsis for truncated text */
+    white-space: nowrap;
+  }
+  .cont-text-1 {
+  position: absolute;
+  top: 30%;
+  right: 2.5%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transform-origin: 0 0;
+  font-size: 3vw;
+  text-overflow: ellipsis; /* Show ellipsis for truncated text */
+  white-space: nowrap;
+  }
+  .cont-text-10 {
+  position: absolute;
+  /* top: 80%; */
+  left: 50%; 
+  transform: translate(-50%, -50%) rotate(45deg);
+  transform-origin: 0 0;
+  font-size: 3vw;
+  text-overflow: ellipsis; /* Show ellipsis for truncated text */
+  white-space: nowrap;
+  }
+  .cont-text-15 {
+  position: absolute;
+  top: 9.8%;
+  left: 3.5%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transform-origin: 0 0;
+  font-size: 3vw;
+  text-overflow: ellipsis; /* Show ellipsis for truncated text */
+  white-space: nowrap;
+  }
+  .cont-text-24 {
+  bottom: 8%;
+  left: 70%;
+  transform: translate(-50%, -30%) rotate(40deg);
+  transform-origin: 0 0;
+  font-size: 3vw; 
+  position: absolute;
+  text-overflow: ellipsis; /* Show ellipsis for truncated text */
+  white-space: nowrap;
+  }
+  .top-line-1 {
+    width: 13%;
+    height: 0.2vw; /* Use !important to override any conflicting styles */
+    background-color: black;
+    position: absolute;
+    top: 73%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+  .top-line-2 {
+  width: 13%;
+  height: 0.2vw;
+  position: absolute;
+  background-color: black;
+  left: 13%;
+  top :73%;
+  z-index: 1;
+  transform: translateY(-50%);
+  }
+  .top-line-3 {
+  width: 13%;
+  height: 0.2vw;
+  z-index: 1;
+  transform: translateY(-50%);
+  position: absolute;
+  background-color: black;
+  left: 26%;
+  top :73%;
+  }
+  .top-line-4 {
+  width: 13%;
+  height: 0.2vw;
+  transform: translateY(-50%);
+  position: absolute;
+  background-color: black;
+  left: 39;
+  top :73%;
+  }
+  .top-line-5 {
+  height: 0.2vw;
+  width: 13%;
+  position: absolute;
+  transform: translateY(-50%);
+  background-color: black;
+  left: 52%;
+  top :73%;
+  }
+  .top-line-7 {
+    z-index: 1;
+    height: 0.2vw;
+    width: 13%;
+    transform: translateY(-50%);
+  position: absolute;
+  background-color: black;
+  left: 74%;
+  top :73%;
+  }
+  .top-line-8 {
+    transform: translateY(-50%);
+    height: 0.2vw;
+    width: 13%;
+  position: absolute;
+  background-color: black;
+  left: 87%;
+  top :73%;
+  }
+  .bottom-line-1 {
+  width: 12.8%;
+  height: 0.2vw;
+  position: absolute;
+  background-color: black;
+  left: 87%;
+  top :33%;
+  }
+  .bottom-line-2 {
+  width: 12.8%;
+  height: 0.2vw;
+  position: absolute;
+  background-color: black;
+  left: 74%;
+  top :33%;
+  }
+  .bottom-line-3 {
+  width: 12.8%;
+  height: 0.2vw;
+  position: absolute;
+  background-color: black;
+  left: 52.5%;
+  top :33%;
+  }
+  .bottom-line-4 {
+  width: 12.8%;
+  height: 0.2vw;
+  position: absolute;
+  background-color: black;
+  left: 39.4%;
+  top :33%;
+  }
+  .bottom-line-5 {
+  width: 12.8%;
+  height: 0.2vw;
+  position: absolute;
+  background-color: black;
+  left: 26.4%;
+  top :33%;
+  }
+  .bottom-line-7 {
+  width: 12.8%;
+  height: 0.2vw;
+  position: absolute;
+  background-color: black;
+  left: 13.2%;
+  top :33%;
+  }
+  .bottom-line-8 {
+  width: 12.8%;
+  height: 0.2vw;
+  position: absolute;
+  background-color: black;
+  left: 0;
+  top :33%;
+  }
+  .left-money {
+  transform: rotate(90deg);
+}
+.left-line-1 {
+  width: 0.2vw;
+  height: 27%;
+  position: absolute;
+  background-color: black;
+  left: 65%;
+  top :0;
+  }
+  .left-line-2 {
+  width: 0.2vw;
+  height: 27%;
+  position: absolute;
+  background-color: black;
+  left: 65%;
+  top :27%;
+  }
+  .left-line-4 {
+  width: 0.2vw;
+  height: 27%;
+  position: absolute;
+  background-color: black;
+  left: 65%;
+  top :73%;
+  }
+  .right-line-1 {
+  width: 0.2vw;
+  height: 27%;
+  position: absolute;
+  background-color: black;
+  left: 30%;
+  top :0;
+  }
+  .right-line-2 {
+  width: 0.2vw;
+  height: 27%;
+  position: absolute;
+  background-color: black;
+  left: 30%;
+  top :27%;
+  }
+  .right-line-4 {
+  width: 0.2vw;
+  height: 27%;
+  position: absolute;
+  background-color: black;
+  left: 30%;
+  top :73%;
+  }
+  .right-money {
+  position: absolute;
+  font-size: 20px;
+  right: 0;
+  transform: rotate(270deg);
+}
+.bottom-money {
+  margin: auto;
+}
+.inner-con {
+    width : 78%;
+    height : 60%;
+    top : 20.2%;
+    left: 11%;
+    position: absolute;
+    background-color: azure;
+    display: flex;
+    /* flex-wrap: wrap; */
+  }
+  .user-controls {
+    width: 25%;
+    height: 92%;
+    border: 1px;
+    background-color : #f5f5b0;
+    border-radius: 20px;
+    position: absolute;
+    top: 4%;
+    left: 37%;
+    align-items: center;
+    border: 0.18vw solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+/* @media screen and (min-width: 768px) {
+        .top-box, .bottom-box, .left-box, .right-box {
+            width: 70%;
+            height: 10%;
+            
+        }
+        .cont-text {
+            font-size: 16px; 
+        }
+
+        .box {
+            font-size: 14px; 
+        }
+    } */
+     .dice {
+        font-size: 4vw;
+        margin-top: 5px; /* Adjust spacing from the top */
+        margin-bottom: 5px; /* Adjust spacing from the bottom */
+        color: red;
+        transition: color 0.3s ease; /* Transition for color change */
+        cursor: pointer;
+        display: none;
+    }
+    .fade-in {
+      animation: fadeIn 3s ease; /* Animation to fade in */
+    }
+    @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    .caption {
+      font-size: 1.5vw;
+      top: 3%;
+      position: absolute;
+    }
+    .cash-player,.user-opt {
+      display: flex;
+      flex-direction: row;
+      font-size: 1.5vw;
+      justify-content: space-around; /* Distribute items evenly */
+    }
+    .chance {
+    width: 25%;
+    height: 92%;
+    border: 1px;
+    background-color: #f5f5b0;
+    border-radius: 20px;
+    position: absolute;
+    top: 4%;
+    left: 6%;
+    overflow: auto;
+    text-align: center;
+    border: 0.18vw solid black;
+  }
+  .chance-para {
+    margin-left: 10%;
+    font-size: medium;
+  }
+  .chest {
+    width: 25%;
+    height: 92%;
+    border: 1px;
+    background-color: #f5f5b0;
+    border-radius: 20px;
+    position: absolute;
+    top: 4%;
+    left: 70%;
+    overflow: auto;
+    text-align: center;
+    border: 0.18vw solid black;
+  }
+  .card {
+  position: relative;
+  width: 90%;
+  height: 15vw;
+  background-color: rgba(72, 236, 17, 0.694);
+  border: 10px solid #0000FF;
+  border-radius: 10%; 
+  border-color: rgba(248, 113, 3, 0.632); 
+  display: none;
+  text-align: center;
+  align-items: center;
+}
+.position {
+  font-size: 2vw;
+  z-index: 1;
+}
+.box-start {
+  top: 80%;
+  left: 89%;
+  /* border-radius: 10px; */
+  position: absolute;
+  /*   */
+  width: 10%;
+  height: 19%;
+}
+.box-jail {
+    width: 10%;
+    height: 20%;
+    top: 80%;
+    right: 89%;
+    /* border-radius: 10px; */
+    position: absolute;
+    /* z-index: -1; */
+    background-color: #f5f5b0; 
+  }
+  .box-chance {
+    width: 10%;
+    height: 19%;
+    background-color: aqua;
+    bottom: 80%;
+    left: 89%;
+    position: absolute;
+  }
+  .button-done,.button-buy,.button-sell {
+    display: none;
+  }
+  .popup {
+      display: none; /* Hide the popup by default */
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 22%;
+      height: 50%;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+      overflow: auto;
+      background-color: #a3acf4;
+      border-radius: 10%;
+    }
+</style>
+<body>
+    <div class ="outer-space">
+      <div class="inner-con">
+        <div class="user-controls">
+          <h2 class="caption" id="caption-user">Hello</h2>
+         <p class="dice" id="sdice" onclick="rolldice()">&#9856;&#9856;</p>
+         <div class="cash-player">
+           <h6 class="cash-player-1">Player 1 -</h6>
+           <h6 class="cash-value-1" id="value-1">0</h6>
+           <br><br><br><br>
+           <h6 class="cash-player-2">Player 2 -</h6>
+           <h6 class="cash-value-2" id="value-2">0</h6>
+         </div>
+           <div class="cash-player">
+           <h6 class="cash-player-3">Player 3 -</h6>
+           <h6 class="cash-value-3" id="value-3">0</h6>
+           <br><br><br><br>
+           <h6 class="cash-player-4">Player 4 -</h6>
+           <h6 class="cash-value-4" id="value-4">0</h6>
+         </div>
+         <div class="user-opt">
+         <button class="button-buy" id="buy-card" onclick="buycards()">Buy</button>
+         <button class="button-sell" id="sell-card" onclick="tradecards()">Trade</button>
+         <button class="button-done" id="done" onclick="playerTurn('done')">Done</button>
+         </div>
+     </div> 
+     <div class="chance">
+       <div class="card" id="card-id">
+         <h4 class="cheading"></h4>
+         <div class="line"></div>
+         <div class="box-text">
+         <span class="text">Rent</span>
+         <span class="text-Rent"><span>
+       </div>
+           <div class="house">
+           <span class="house-text">&#127968; - </span>
+           <span class="house-value-1"></span>
+       </div>
+       <div class="house">
+           <span class="house-text">&#127968;&#127968; - </span>
+           <span class="house-value-2"></span>
+       </div>
+           <div class="house">
+           <span class="house-text">&#127968;&#127968;&#127968; - </span>
+           <span class="house-value-3"></span>
+       </div>
+       <div class="box-closecard">
+       <button class="close-cardshow" onclick="closecard()">Close</button>
+       </div>
+         </div> 
+       <h3 class="chance-heading">Chance</h3>
+       <p class="chance-para">2 . Go to jail</p>
+       <p class="chance-para">3 . Move 3 steps</p>
+       <p class="chance-para">4 . School fee - 100</p>
+       <p class="chance-para">5 . Go to jail</p>
+       <p class="chance-para">6 . Refund 100</p>
+       <p class="chance-para">7 . Go to Kanpur</p>
+       <p class="chance-para">8 . Electric City Bill - 200</p>
+       <p class="chance-para">9 . Bank Error</p>
+       <p class="chance-para">10 . You are Safe</p>
+       <p class="chance-para">11 . Gift - 200</p>
+       <p class="chance-para">12 . Bank interest - 50</p>
+     </div> 
+     <div class="chest">
+       <h3 class="chance-heading">Chest</h3>
+       <p class="chance-para">2 . Go to Indore</p>
+       <p class="chance-para">3 . Computer Damage - 150</p>
+       <p class="chance-para">4 . go to Jail</p>
+       <p class="chance-para">5 . Move 6 steps</p>
+       <p class="chance-para">6 . Your birthday collect 100/each player</p>
+       <p class="chance-para">7 . Doctor fee - 50</p>
+       <p class="chance-para">8 . Your are safe</p>
+       <p class="chance-para">9 . Go to Start</p>
+       <p class="chance-para">10 . Collect hotel tax</p>
+       <p class="chance-para">11 . Hotel tax AGain</p>
+       <p class="chance-para">12 . Move 4 Steps</p>
+     </div>
+     <div class="popup" id="popupcontainer">
+       <h2 class="heading-popup" id="heading-popupcontainer"></h2>
+       <div id="popup-dynamic"></div>
+     </div>
+     </div> 
+     
+     
+    <div class="top-box" id="top-container">
+        <div class="top-inner">
+       <div class = "topc1">
+      <div class="font-cont-16"></div>  
+       <h4 class="top-money box16">&#8377; 200</h4> 
+      <div class="top-line-1"></div>
+      <p class="cont-text-16">Vizag</p>
+      <div id="pos-cont-16" class="position 16"></div>
+       </div>
+       <div class = "topc2">
+        <p class="cont-text-17">A.p Railways</p> 
+      <div class="font-cont-17"></div>
+      <h4 class="top-money box17">&#8377; 350</h4>
+      <div class="top-line-2"></div>
+      <div id="pos-cont-17" class="position 17"></div>
+       </div>
+       <div class = "topc3">
+      <div class="font-cont-18"></div>
+      <h4 class="top-money box18">&#8377; 250</h4>
+      <div class="top-line-3"></div>
+      <p class="cont-text-18">Indore</p>
+      <div id="pos-cont-18" class="position 18"></div>
+       </div>
+       <div class = "topc4">
+         <p class="cont-text-19">Manipur</p>
+      <div class="font-cont-19"></div>
+      <h4 class="top-money box19">&#8377; 240</h4>
+      <div class="top-line-4"></div>
+      <div id="pos-cont-19" class="position 19"></div>
+       </div>
+       <div class = "topc5">
+        <p class="cont-text-20">Simla</p>
+      <div class="font-cont-20"></div>
+      <h4 class="top-money box20">&#8377; 260</h4>
+      <div class="top-line-5"></div>
+      <div id="pos-cont-20" class="position 20"></div>
+       </div>
+       <div class = "topc6">
+        <p class="cont-text-21">CHEST</p>
+      <div id="pos-cont-21" class="position 21"></div>
+       </div>
+       <div class = "topc7">
+         <p class="cont-text-22">Electric city</p>
+      <div class="font-cont-22"></div>
+      <h4 class="top-money box22">&#8377; 150</h4>
+      <div class="top-line-7"></div>
+      <div id="pos-cont-22" class="position 22"></div>
+       </div>
+       <div class = "topc8">
+        <p class="cont-text-23">Kanpur</p>
+      <div class="font-cont-23"></div>
+      <h4 class="top-money box23">&#8377; 290</h4>
+      <div class="top-line-8"></div>
+      <div id="pos-cont-23" class="position 23"></div>
+       </div>
+      </div>
+      </div>
+      <div class="bottom-box" id="bottom-container">
+        <div class="bottom-inner">
+        <div class="bottomc9" id="bottom-1">
+          <h4 class="bottom-money box9">&#8377; 240</h4>
+          <p class="cont-text-9">Seaways</p>
+          <div class="font-cont-9"></div>
+          <div class="bottom-line-1"></div>
+          <div id="pos-cont-9" class="position 9"></div>
+        </div>
+        <div class="bottomc8">
+          <p class="cont-text-8">Kolkata</p>
+          <div class="font-cont-8"></div>
+          <h4 class="bottom-money box8">&#8377; 200</h4>
+          <div class="bottom-line-2"></div>
+          <div id="pos-cont-8" class="position 8"></div>
+        </div>
+        <div class="bottomc7">
+          <p class="cont-text-7">Delhi</p>
+          <div class="font-cont-7"></div>
+          <h4 class="bottom-money box7">&#8377; 160</h4>
+          <div class="bottom-line-3"></div>
+          <div id="pos-cont-7" class="position 7"></div>
+        </div>
+        <div class="bottomc6">
+          <p class="cont-text-6">Hyderabad</p>
+          <div class="font-cont-6"></div>
+          <h4 class="bottom-money box6">&#8377; 200</h4>
+          <div class="bottom-line-4"></div>
+          <div id="pos-cont-6" class="position 6"></div>
+        </div>
+        <div class="bottomc5">
+          <p class="cont-text-5">Ahmedabad</p>
+          <div class="font-cont-5"></div>
+          <h4 class="bottom-money box5">&#8377; 100</h4>
+          <div class="bottom-line-5"></div>
+          <div id="pos-cont-5" class="position 5"></div>
+        </div>
+        <div class="bottomc4">
+          <p class="cont-text-4">Income Tax</p>
+          <div id="pos-cont-4" class="position 4"></div>
+        </div>
+        <div class="bottomc3">
+          <p class="cont-text-3">Jaipur</p>
+          <div class="font-cont-3"></div>
+          <div class="bottom-line-7"></div>
+          <div id="pos-cont-3" class="position 3"></div>
+          <h4 class="bottom-money box3">&#8377; 120</h4>
+        </div>
+        <div class="bottomc2">
+          <p class="cont-text-2">Chennai</p>
+          <div class="font-cont-2"></div>
+          <h4 class="bottom-money box2">&#8377; 100</h4>
+          <div class="bottom-line-8"></div>
+          <div id="pos-cont-2" class="position 2"></div>
+        </div>
+      </div>
+      </div>
+      <div class="left-box" id="left-container">
+        <!-- <div class="left-inner"> -->
+        <div class="leftc4">
+          <p class="cont-text-14">Srinagar</p>
+          <div class="font-cont-14"></div>
+          <h4 class="left-money box14">&#8377; 200</h4>
+          <div class="left-line-1"></div>
+          <div id="pos-cont-14" class="position 14"></div>
+        </div>
+        <div class="leftc3">
+          <p class="cont-text-13">Bangalore</p>
+          <div class="font-cont-13"></div>
+          <h4 class="left-money box13">&#8377; 250</h4>
+          <div class="left-line-2"></div>
+          <div id="pos-cont-13" class="position 13"></div>
+        </div>
+        <div class="leftc2">
+          <p class="cont-text-12">Chance</p>
+          <div id="pos-cont-12" class="position 12"></div>
+        </div>
+        <div class="leftc1">
+          <p class="cont-text-11">Water ways</p>
+          <div class="font-cont-11"></div>
+          <h4 class="left-money box11">&#8377; 170</h4>
+          <div class="left-line-4"></div>
+          <div id="pos-cont-11" class="position 11"></div>
+        </div>
+      </div>
+      <div class="right-box" id="right-container">
+        <div class="rightc1">
+          <div class="font-cont-25"></div>
+          <h4 class="right-money box25">&#8377; 350</h4>
+          <p class="cont-text-25">Agra</p>
+          <div class="right-line-1"></div>
+          <div id="pos-cont-25" class="position 25"></div>
+        </div>
+        <div class="rightc2">
+          <div class="font-cont-26"></div>
+          <h4 class="right-money box26">&#8377; 300</h4>
+          <p class="cont-text-26">Patna</p>
+          <div class="right-line-2"></div>
+          <div id="pos-cont-26" class="position 26"></div>
+        </div>
+        <div class="rightc3">
+          <p class="cont-text-27">CHEST</p>
+          <div id="pos-cont-27" class="position 27"></div>
+        </div>
+        <div class="rightc4">
+          <div class="font-cont-28"></div>
+          <h4 class="right-money box28">&#8377; 150</h4>
+          <p class="cont-text-28">Motor Boat</p>
+          <div class="right-line-4"></div>
+          <div id="pos-cont-28" class="position 28"></div>
+        </div>
+      </div>  
+      <div class="box-club">
+        <p class="cont-text-15">Club</p>
+        <div id="pos-cont-15" class="position 15"></div>
+        </div>
+        <div class="box-jail">
+        <p class="cont-text-10">Jail</p>
+        <div id="pos-cont-10" class="position 10"></div>
+        </div>  
+        <div class="box-chance">
+          <p class="cont-text-24">Chance</p>
+          <div id="pos-cont-24" class="position 24"></div>
+          </div>          
+      <!-- </div> -->
+      <div class=box-start>
+        <p class="cont-text-1">Start</p>
+          <div id="pos-cont-1" class="position 1"></div>
+      </div>
+      <button onclick="toggleFullScreen()">Toggle Fullscreen</button>
+      </div>
+      <script>
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // Define the board
+const board = [
+    "Start", "Property 1", "Property 2", "Property 3", // Add more properties as needed
+];
+const cards={
+      2:["Chennai",100,2],3:["Jaipur",120,3],5:["Ahammabad",100,5],6:["Hyderabad",200,6],7:["Delhi",160,7],8:["Kolkata",200,8],9:["Seaways",240,9],11:["Water ways",170,11],13:["Bangalore",250,13],14:["Srinagar",170,14],
+      16:["VIZAG",200,16],17:["A.p Railways",350,17],18:["Indore",250,18],19:["Manipur",240,19],20:["Simla",260,20],22:["Electric city",150,22],23:["Kanpur",290,23],25:["Agra",350,25],26:["Patna",300,26],28:["Motor Boat",150,28]
+    };
+const otherCards ={
+  1:['start',1],4:['income tax',4],10:['jail',10],12:['chance',12],15:['club',15],21:['chest',21],24:['chance',24],27:['chest',27]
+};
+let exit =[];
+let jail= {1:[false,0],2:[false,0],3:[false,0],4:[false,0]};
+var players = [];
+let iswaitjail = false;
+const max_container =28;
+const playerIcon = ["⛟","⛄","⚽","⛹"]
+var playerIndex = 1;
+var messagePlayer = ["Welcome To Game",'Player num Roll Dice!!',"Click done to end turn","Repay to bank"];
+// Function to initialize playerss
+function initializePlayers(numPlayers) {
+    for (let i = 0; i < numPlayers; i++) {
+        players.push({
+            name: `Player ${i+1}`,
+            money: 1500, // Starting money for each player
+            position: 1, // Start position
+            cards:[]
+        });
+    }
+    return players;
+}
+
+// Function to display player money on board
+function displayPlayerMoney() {
+    for(let i=1;i<=players.length;i++){
+      let playerMoneyEle = document.getElementById(`value-${i}`);
+      playerMoneyEle.innerHTML=players[i-1].money;
+    }
+}
+function tradecards(){
+  let docElem = document.getElementById('popupcontainer');
+  docElem.style.display = "block";
+  handlepopup('trade','Trade with Players');
+  initialtrade();
+}
+function buycards(){
+  let money = cards[players[playerIndex - 1].position][1];
+console.log(money);
+// Check if any player already bought the card
+let cardAlreadyBought = players.some(player => {
+    return player.cards.some(card => card[2] === players[playerIndex - 1].position);
+});
+if (cardAlreadyBought) {
+    alert('Card already bought');
+} else {
+    if (players[playerIndex - 1].money < money) {
+        alert('Not enough money');
+    } else {
+        console.log("Position to buy: " + players[playerIndex - 1].position);
+        players[playerIndex - 1].cards.push(cards[players[playerIndex - 1].position]);
+        players[playerIndex - 1].money -= money; // Subtract the correct amount of money
+        displayPlayerMoney();
+        handlepopup('buycard');
+    }
+}
+
+}
+// Function to place players on the board
+function placePlayersOnBoard() {
+  for(let i=1;i<=players.length;i++){
+  var initial = document.getElementById('pos-cont-1');
+  initial.innerHTML += playerIcon[i-1];
+  }
+}
+
+// Function to start the game
+function startGame() {
+    const numPlayers = parseInt(prompt("Enter the number of players:"));
+    if(numPlayers == 1 || numPlayers > 4)
+      {
+        alert("Minimum No of Players is 2 and Max is 4");
+      }
+    players = initializePlayers(numPlayers);
+    displayPlayerMoney(players);
+    placePlayersOnBoard(players);
+    console.log('game started')
+    usermessage(0);
+}
+let isRolling = false;
+function rolldice(){
+  if (isRolling) {
+        return; // Prevent multiple clicks while animation is playing
+    }
+    isRolling = true;
+        var random1 = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
+        var random2 = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
+        var dieSymbol1 = "&#" + (9855 + random1) + ";";
+        var dieSymbol2 = "&#" + (9855 + random2) + ";";
+        // document.getElementById('sdice').innerHTML = dieSymbol;
+        const diceElement= document.getElementById('sdice');
+        diceElement.classList.add('fade-in');
+        diceElement.innerHTML = dieSymbol1+dieSymbol2;
+        setTimeout(() => {
+                diceElement.classList.remove('fade-in');
+            }, 3000);
+        var total = parseInt(random1+random2);
+        moveplayers(total);
+        console.log('rolled '+total+" moving to game loop");
+}
+function checkjail(){
+  console.log('checking '+playerIndex);
+  console.log(jail);
+    if(jail[playerIndex][0] && jail[playerIndex][1]>=1){
+    handlepopup('jail','You are in Jail');
+    console.log('in jail '+jail[playerIndex]);
+    }
+    else{
+      console.log('not in jail')
+    }
+}
+function playerTurn(msg){
+  if(exit.length>players.length){
+    handlepopup('gamewon','Player ','')
+  }
+  console.log("players length"+players.length);
+  if(msg == 'done'){
+    playerIndex++;
+    if(exit.includes(playerIndex)){
+    playerIndex++;
+    console.log(exit);
+    }
+    if(playerIndex ==players.length+1){
+      playerIndex=1;
+    }
+    checkjail();
+    moneyIsLess();
+    usermessage(1);   //update player in page
+    isRolling = false;
+    let diceEle = document.getElementById('sdice');
+    diceEle.style.display = "block";
+    let doneEle = document.getElementById('done');
+      done.style.display="none";
+    let buyEle = document.getElementById('buy-card');
+    buyEle.style.display="none";
+    let sellEle = document.getElementById('sell-card');
+    sellEle.style.display="none";
+  }
+}
+function usermessage(num){
+
+  let docEle = document.getElementById('caption-user');
+  let diceEle = document.getElementById('sdice');
+  let done = document.getElementById('done');
+  if(num == 0){
+    setTimeout(() => {
+      let upd = messagePlayer[num+1].replace('num',playerIndex);
+  docEle.innerHTML = upd;
+    diceEle.style.display = "block";
+    }, 3000);
+  docEle.innerHTML = messagePlayer[num];
+  console.log('welcome message '+"player 1 roll dice")
+  }
+  else if(num == 1){
+  let upd = messagePlayer[num].replace('num',playerIndex);
+  docEle.innerHTML = upd;}
+  else if(num == 2){
+    setTimeout(() => {
+      diceEle.style.display = "none";
+      done.style.display="block";
+      let buyEle = document.getElementById('buy-card');
+    buyEle.style.display="block";
+    let sellEle = document.getElementById('sell-card');
+    sellEle.style.display="block";
+    }, 3000);
+    docEle.innerHTML= messagePlayer[num];
+  }
+  else if(num == 3){
+      diceEle.style.display = "none";
+      done.style.display="none";
+      let sellEle = document.getElementById('sell-card');
+    sellEle.style.display="block";
+      docEle.innerHTML = messagePlayer[num];
+  }
+}
+function moveplayers(total){
+  console.log('moving player :'+playerIndex);
+  if(parseInt(players[playerIndex-1].position) != 10 || !jail[playerIndex][0]){
+  let prevpos = players[playerIndex-1].position;
+  console.log('player '+playerIndex+"position :"+players[playerIndex-1].position);
+  if(prevpos+total > max_container){
+    console.log('round completed');
+    let preposEle = document.getElementById(`pos-cont-${prevpos}`);
+    let contentprev = preposEle.innerHTML;
+    let updatecont =  contentprev.replace(playerIcon[playerIndex-1], '');
+    preposEle.innerHTML=updatecont;
+    players[playerIndex-1].position = players[playerIndex-1].position+total - max_container;
+    let nextposEle = document.getElementById(`pos-cont-${players[playerIndex-1].position}`);
+    nextposEle.innerHTML+= playerIcon[playerIndex-1];
+    addsub(false,200);
+    const specialCard = otherCards[players[playerIndex-1].position];
+            console.log(specialCard);
+            if (specialCard) {
+                console.log('special card');
+                setTimeout(() => {
+                    handlesplcard(specialCard[0],total); // Return the name of the special card
+                }, 2000);
+                }
+  }
+  else{
+  let preposEle = document.getElementById(`pos-cont-${prevpos}`);
+  let contentprev = preposEle.innerHTML;
+  let updatecont =  contentprev.replace(playerIcon[playerIndex-1], '');
+  preposEle.innerHTML=updatecont;
+  players[playerIndex-1].position = players[playerIndex-1].position+total;
+  let nextposEle = document.getElementById(`pos-cont-${players[playerIndex-1].position}`);
+  nextposEle.innerHTML+= playerIcon[playerIndex-1];
+  const specialCard = otherCards[players[playerIndex-1].position];
+            console.log(specialCard);
+            if (specialCard) {
+                console.log('special card');
+                setTimeout(() => {
+                    handlesplcard(specialCard[0],total); // Return the name of the special card
+                }, 2000);
+                }
+  }}
+  else{
+    handlejail(total);
+    }
+  checkrent();
+  usermessage(2);
+}
+let indexChange = 2;
+let tradeData = [];
+function initialtrade(index){
+  let maxPlayers = players.length;
+    if(indexChange == playerIndex)
+    indexChange = indexChange+1;
+    if(indexChange == maxPlayers+1 ||indexChange<1){
+      indexChange= 1;
+    }
+    console.log('indexChange '+indexChange);
+    document.getElementById('currentPlayer').innerText = players[indexChange-1].name;
+    let playerCardsDropdown = document.getElementById('playerCards');
+    playerCardsDropdown.innerHTML = '';
+    let emptyOption = document.createElement('option');
+    emptyOption.text = "select card";
+    emptyOption.value = ""; // Optionally, you can set a value for the empty option
+    playerCardsDropdown.add(emptyOption, 0);
+    players[playerIndex - 1].cards.forEach(card => {
+    let option = document.createElement('option');
+    option.text = card[0];
+    playerCardsDropdown.add(option);
+  });
+  let tradeWithPlayerCardsDropdown = document.getElementById('requestedCards');
+  tradeWithPlayerCardsDropdown.innerHTML = '';
+  let empty = document.createElement('option');
+  empty.text = "select card";
+  empty.value = ""; // Optionally, you can set a value for the empty option
+  tradeWithPlayerCardsDropdown.add(empty, 0);
+  players[indexChange - 1].cards.forEach(card => {
+    let option = document.createElement('option');
+    option.text = card[0];
+    tradeWithPlayerCardsDropdown.add(option);
+  });
+    document.getElementById('moneyOffered').addEventListener('input', function() {
+    document.getElementById('moneyOfferedValue').innerText = this.value;
+    document.getElementById('moneyOffered').max = players[playerIndex-1].money;
+    });
+    document.getElementById('moneyRequested').addEventListener('input', function() {
+    document.getElementById('moneyRequestedValue').innerText = this.value;
+     });
+     tradeData.splice(0, tradeData.length);
+     tradeData.push({
+      "offeredto":indexChange
+     })
+  }
+function submittrade(){
+  let moneyOffered = parseInt(document.getElementById('moneyOffered').value);
+    let moneyRequested = parseInt(document.getElementById('moneyRequested').value);
+    let offeredCards = [];
+    let requestedCards = [];
+
+    // Get offered cards
+    let selectedCardsDropdown = document.getElementById('playerCards');
+    for (let option of selectedCardsDropdown.options) {
+        if (option.selected) {
+            offeredCards.push(option.text);
+        }
+    }
+
+    // Get requested cards
+    let requestedCardsDropdown = document.getElementById('requestedCards');
+    for (let option of requestedCardsDropdown.options) {
+        if (option.selected) {
+            requestedCards.push(option.text);
+        }
+    }
+
+    // Push all data into the tradeData array
+    console.log(offeredCards+" "+requestedCards);
+    if(offeredCards != "select card" || requestedCards != "select card"){
+    tradeData.push({
+        "offeredCards": offeredCards,
+        "requestedCards": requestedCards,
+        "moneyOffered": moneyOffered,
+        "moneyRequested": moneyRequested
+    });
+    setTimeout(() => {
+      tradeoffered();
+    }, 2000);}
+    else{
+      alert('Trade is invalid');
+    }
+    clearpopup();
+}
+function getCardByName(cardName) {
+    for (const key in cards) {
+        if (String(cards[key][0]) === String(cardName)) {
+            console.log("Card found:", cards[key]);
+            return cards[key];
+        }
+    }
+    console.log("Card not found.");
+    return null; // Return null if card name is not found
+}
+function deleteCardFromPlayer(playerId, card) {
+    const playerCards = players[playerId].cards;
+    for (let i = 0; i < playerCards.length; i++) {
+        if (playerCards[i][0] ==card) {
+            playerCards.splice(i, 1); // Remove the card from the player's cards array
+            break; // Exit the loop once the card is found and removed
+        }
+    }
+}
+function tradeoffered(){
+  handlepopup('tradeoffered','Trade Offer');
+  console.log(tradeData);
+  let offeredCardsContainer = document.getElementById('offeredCardsContainer');
+offeredCardsContainer.innerHTML = '';
+
+let validOfferedCards = tradeData[1].offeredCards.filter(card => card !== "select card");
+
+if (validOfferedCards.length > 0) {
+    validOfferedCards.forEach(card => {
+        let cardElement = document.createElement('div');
+        cardElement.textContent = card;
+        offeredCardsContainer.appendChild(cardElement);
+    });
+} else {
+    let messageElement = document.createElement('div');
+    messageElement.textContent = "No cards offered.";
+    offeredCardsContainer.appendChild(messageElement);
+}
+
+let requestedCardsContainer = document.getElementById('requestedCardsContainer');
+requestedCardsContainer.innerHTML = '';
+
+let validRequestedCards = tradeData[1].requestedCards.filter(card => card !== "select card");
+
+if (validRequestedCards.length > 0) {
+    validRequestedCards.forEach(card => {
+        let cardElement = document.createElement('div');
+        cardElement.textContent = card;
+        requestedCardsContainer.appendChild(cardElement);
+    });
+} else {
+    let messageElement = document.createElement('div');
+    messageElement.textContent = "No cards requested.";
+    requestedCardsContainer.appendChild(messageElement);
+}
+
+
+    document.getElementById('offeredMoney').innerText = tradeData[1].moneyOffered;
+    document.getElementById('requestedMoney').innerText = tradeData[1].moneyRequested;
+
+    // Display accept and reject options
+    let acceptBtn = document.getElementById('acceptBtn');
+    let rejectBtn = document.getElementById('rejectBtn');
+    acceptBtn.onclick = function() {
+      console.log(tradeData);
+      let validOfferedCards = tradeData[1].offeredCards.filter(card => card !== "select card");
+      let validRequestedCards = tradeData[1].requestedCards.filter(card => card !== "select card");
+      if(validOfferedCards.length>0){
+        console.log('offered'+validOfferedCards);
+        deleteCardFromPlayer(playerIndex-1, validOfferedCards);
+        players[tradeData[0].offeredto-1].cards.push(getCardByName(validOfferedCards));
+      }
+      if(validRequestedCards.length>0){
+        console.log('requested'+validRequestedCards);
+        players[playerIndex - 1].cards.push(getCardByName(validRequestedCards)); // Push the retrieved card into the player's cards array
+        deleteCardFromPlayer(parseInt(tradeData[0].offeredto)-1, validRequestedCards);
+      }
+    // Update player's money by subtracting the requested money and adding the offered money
+    if(tradeData[1].moneyOffered){
+    players[tradeData[0].offeredto-1].money += tradeData[1].moneyOffered;
+    players[playerIndex-1].money -= tradeData[1].moneyOffered;}
+    if(tradeData[1].moneyRequested){
+      players[tradeData[0].offeredto-1].money -= tradeData[1].moneyRequested;
+    players[playerIndex-1].money += tradeData[1].moneyRequested;
+    
+    }
+    clearpopup();
+    console.log(players);
+    displayPlayerMoney(); 
+  }
+    rejectBtn.onclick = function() {
+      tradeData.splice(0, tradeData.length);
+      console.log('cleared '+tradeData);
+      clearpopup();
+    };
+   
+}
+
+function prevPlayer(){
+  indexChange = (indexChange === 1) ? players.length : indexChange - 1;
+        if (indexChange !== playerIndex) {
+            initialtrade(indexChange);
+        }
+}
+function nextPlayer(){
+  indexChange = (indexChange === players.length) ? 1 : indexChange + 1;
+        if (indexChange !== playerIndex) {
+            initialtrade(indexChange);
+        }
+}
+function checkrent(){
+    console.log('checking rent');
+  let cardAlreadyBought = players.some(player => {
+    return player.cards.some(card => card[2] === players[playerIndex - 1].position);
+});
+if (cardAlreadyBought) {
+    let owner = players.find(player => player.cards.some(card => card[2] === players[playerIndex - 1].position));
+    if(parseInt(owner.name.match(/\d+/)[0]) != playerIndex){
+    let cardValue = cards[players[playerIndex - 1].position][1];
+    let rent = parseInt((cardValue / 100) * 10);
+    owner.money += rent; // Add rent to the owner's money
+    console.log(owner);
+    players[playerIndex - 1].money -= rent; // Deduct rent from the current player's money
+    displayPlayerMoney();
+    handlepopup('rent',`Rent Paid ${rent} by ${players[playerIndex-1].name}`,`<div style='display: flex;'>
+    <p style="font-size: 4rem;">${playerIcon[playerIndex-1]}</p>
+    <p style="font-size: 55px;">&#x2192;</p>
+    <p style="font-size: 4rem;">${playerIcon[parseInt(owner.name.match(/\d+/)[0])-1]}</p>
+    </div>`)
+}}
+
+}
+function addsub(sub,val){
+  if(sub)
+  players[playerIndex-1].money -=val;
+  else
+  players[playerIndex-1].money +=val;
+  displayPlayerMoney();
+}
+function payjail(){
+  addsub(true, 200);
+  jail[playerIndex][0] = false;
+  jail[playerIndex][1] = 0;
+  console.log('repayed');
+  handlepopup('other','Repayed Jail $200','');
+  clearpopup();
+}
+function waitjail(){
+  jail[playerIndex][0]=true;
+  jail[playerIndex][1] +=1;
+  clearpopup();
+}
+function setplayerjail(){
+  jail[playerIndex][0] = true;
+  jail[playerIndex][1] = 0;
+  handlepopup('jail','You are in Jail');
+}
+function handlesplcard(splcard,rolled){
+  console.log(splcard+rolled);
+  const actions = {
+        'chance': {
+            2: () => [changeposition(10),handlepopup('chance',"Sent to Jail","Crime")],
+            3: () => [moveplayers(3),handlepopup('chance','Moving 3 Forward',"")],
+            4: () => [addsub(true, 100),handlepopup('chance','School fee Paid $100',"")],
+            5: () => [changeposition(10),handlepopup('chance','Sent to Jail','Kidnap')],
+            6: () => [addsub(false, 100),handlepopup('chance','You got Refund $100',"Bank Error")],
+            7: () => [changeposition(23),handlepopup('chance','Chance to Visit Kanpur','')],
+            8: () => [addsub(true, 200),handlepopup('chance','Electric City Bill Paid $200')],
+            9: () => handlepopup('chance',"Bank Error",'Refund not Processed'),
+            10: () => [addsub(false, 100),handlepopup('chance','Your property value increased','You are safe')],
+            11: () => [addsub(false, 200),handlepopup('chance','You received Gift','$200')],
+            12: () =>[addsub(false, 100),handlepopup('chance','Bank Paid Interest $50','')]
+        },
+        'chest': {
+          2: () => [changeposition(18),handlepopup('chest','You are Visiting Indore','')],
+            3: () => [addsub(true, 150),handlepopup('chest','Your Computer Damaged','Repair charges $150')],
+            4: () => [changeposition(10),handlepopup('chest','Sent to Jail','Selling Illegal Items')],
+            5: () => [moveplayers(6),handlepopup('chest','Moving six Steps Ahead','')],
+            6: () => spl(),
+            7: () => [addsub(true, 50),handlepopup('chest','Doctor Visiting fee $50','')],
+            8: () => [handlepopup('chest','Nothing Special','')],
+            9: () => [changeposition(1),handlepopup('chest','Advance to GO','')],
+            10: () => [addsub(false, 100),handlepopup('chest','Income Tax House raid','per Each house pay 25 and Each Hotel pay 50')],
+            11: () => [addsub(false, 100),handlepopup('chest','Income Tax House raid','per Each house pay 25 and Each Hotel pay 50')],
+            12: () => [moveplayers(4),handlepopup('chest','Moving Four Steps','')]
+        },
+      'jail':[
+       () => [setplayerjail()]
+      ],
+      'income tax': [
+        () => addsub(true, 200),
+        () => handlepopup('income tax','Paid Income Tax $200','')
+    ],
+    'club': [
+        () => handlepopup('club','Visiting Club','Free Parking')
+    ]
+  };
+    // Check if the splcard exists in the actions object
+    if (actions[splcard]) {
+        if (Array.isArray(actions[splcard])) {
+            actions[splcard].forEach(action => action());
+        } else if (actions[splcard][rolled]) {
+            actions[splcard][rolled]();
+        }
+    } else {
+        console.log('No actions defined for the combination:', splcard);
+    }
+    usermessage(2);
+}
+function clearpopup(){
+  let popupEle = document.getElementById('popupcontainer');
+  popupEle.style.display = "none";
+  let heading = document.getElementById('heading-popupcontainer');
+  heading.innerHTML="";
+  const parentElement = document.getElementById('popup-dynamic');
+  parentElement.innerHTML = "";
+}
+
+function handlepopup(type,head,msg){
+  console.log("message "+head);
+  let popupEle = document.getElementById('popupcontainer');
+  let heading = document.getElementById('heading-popupcontainer');
+  let parentElement = document.getElementById('popup-dynamic');
+  popupEle.style.display = "block";
+if(type == 'buycard'){
+  setTimeout(() => {
+    clearpopup();
+  }, 3000);
+  console.log(cards[players[playerIndex - 1].position]);
+  heading.textContent = `Card Bought ${cards[players[playerIndex - 1].position][0]} `;
+  // Create the HTML content
+const cardContent = `
+    <div class="card" id="card-popup">
+        <h4 class="cheading-popup"></h4>
+        <div class="line"></div>
+        <div class="box-text">
+            <span class="text">Rent</span>
+            <span class="text-Rent-popup"></span>
+        </div>
+        <div class="house">
+            <span class="house-text">&#127968; - </span>
+            <span class="house-value-1-popup"></span>
+        </div>
+        <div class="house">
+            <span class="house-text">&#127968;&#127968; - </span>
+            <span class="house-value-2-popup"></span>
+        </div>
+        <div class="house">
+            <span class="house-text">&#127968;&#127968;&#127968; - </span>
+            <span class="house-value-3-popup"></span>
+        </div>
+        <div class="box-closecard">
+            <button class="close-cardshow" onclick="closecard()">Close</button>
+        </div>
+    </div>`;
+  // card display set to none
+// Add the card content to the parent element
+      parentElement.innerHTML = cardContent;
+      var text = cards[players[playerIndex-1].position][0];
+      console.log(cards[players[playerIndex-1].position][0]);
+      let s = document.getElementById('card-popup');
+      s.style.display='block';
+      var elements = document.querySelector(".cheading-popup");
+      let v=cards[players[playerIndex-1].position][1];
+      console.log(v);
+      elements.textContent=text+' '+'-'+' '+v;
+      var re = document.querySelector(".text-Rent-popup");
+      re.textContent = (v/100)*10;
+      let h1=document.querySelector('.house-value-1-popup');
+      h1.textContent = (v/100)*20;
+      let h2=document.querySelector('.house-value-2-popup');
+      h2.textContent = (v/100)*30;
+      let h3=document.querySelector('.house-value-3-popup');
+      h3.textContent = (v/100)*40;
+}
+else if(type == 'rent'){
+  setTimeout(() => {
+  clearpopup();
+  }, 3000);
+  heading.textContent= head;
+  parentElement.innerHTML = msg;
+  console.log('rent')
+}
+else if(type == 'income tax'|| type== 'chance'||type=='chest'||type == 'club'||type == 'other'){
+  setTimeout(() => {
+    clearpopup();
+  }, 3000);
+  heading.textContent = head;
+  parentElement.innerHTML = msg;
+}
+else if(type == 'jail'){
+  heading.textContent=head;
+  let cont ='<div style="display: flex;"><button onclick="payjail()">Pay 200</button><button onclick="waitjail()">Wait Until 6</button></div>';
+  parentElement.innerHTML = cont;
+}
+else if(type == 'trade'){
+  heading.textContent = head;
+  //let selectedplayer = ;
+  let tradecont = `    <!-- Trade initiation form -->
+<div id="tradeForm">
+    <div class="playerDisplay">
+        <button id="prevPlayerBtn" onclick="prevPlayer()">&lt;</button>
+        <span id="currentPlayer"></span>
+        <button id="nextPlayerBtn" onclick="nextPlayer()">&gt;</button>
+    </div>
+
+    <div class="cardsSection">
+        <label for="playerCards">Your cards:</label>
+        <select id="playerCards">
+            <!-- Options populated dynamically with player's cards -->
+        </select>
+    </div>
+
+    <div class="cardsSection">
+        <label for="requestedCards">Other player's cards:</label>
+        <select id="requestedCards">
+            <!-- Options populated dynamically with other player's cards -->
+        </select>
+    </div>
+
+    <div class="moneySection">
+        <label for="moneyOffered">Send Money:</label>
+        <input type="range" id="moneyOffered" min="0" max="1000" value="0">
+        <output for="moneyOffered" id="moneyOfferedValue">0</output>
+
+        <label for="moneyRequested">Request Money:</label>
+        <input type="range" id="moneyRequested" min="0" max="1000" value="0">
+        <output for="moneyRequested" id="moneyRequestedValue">0</output>
+    </div>
+
+    <button onclick="submittrade()">Initiate Trade</button>
+    <button onclick = "clearpopup()">Cancel</button>
+</div>`;
+parentElement.innerHTML = tradecont;
+}
+else if(type == 'tradeoffered'){
+  heading.textContent = head;
+  let tradeofferedcont = `<div id="tradeOfferDisplay">
+        <strong>Offered Cards:</strong>
+        <div id="offeredCardsContainer">
+            <!-- Offered cards will be dynamically added here -->
+        </div>
+        <strong>Requested Cards</strong>
+        <div id ="requestedCardsContainer"></div>
+    </div>
+    <div>
+        <strong>Offered Money:</strong> <span id="offeredMoney"></span>
+    </div>
+    <div>
+        <strong>Requested Money:</strong> <span id="requestedMoney"></span>
+    </div>
+    <button id="acceptBtn">Accept</button>
+    <button id="rejectBtn">Reject</button>
+</div>`;
+parentElement.innerHTML = tradeofferedcont;
+}
+else if(type == 'lessmoney'){
+  heading.textContent = head;
+  let lessmoneycont = `<div><button onclick="repaybank()">Repay</button><button onclick="bankruptcy()">Declare Bankruptcy</button></div>`;
+  parentElement.innerHTML = lessmoneycont;
+}
+else if(type == 'gamewon'){
+  heading.textContent = head+playerIndex+'Won';
+  parentElement.innerHTML ='';
+}
+}
+// function checkjail(){
+//   console.log('checking '+playerIndex);
+//   console.log(jail);
+//     if(jail[playerIndex][0] && jail[playerIndex][1]>=1){
+//     handlepopup('jail','You are in Jail');
+//     console.log('in jail '+jail[playerIndex]);
+//     }
+//     else{
+//       console.log('not in jail')
+//     }
+// }
+function repaybank(){
+  clearpopup();
+  usermessage(3);
+  let repaycheck = setInterval(() => {
+    if(players[playerIndex-1].money>=0){
+      usermessage(2);
+      clearInterval(repaycheck);
+      isRolling = false;
+    let diceEle = document.getElementById('sdice');
+    diceEle.style.display = "block";
+    let doneEle = document.getElementById('done');
+      done.style.display="none";
+    let buyEle = document.getElementById('buy-card');
+    buyEle.style.display="none";
+    let sellEle = document.getElementById('sell-card');
+    sellEle.style.display="none";
+    }
+  }, 1000);
+}
+function bankruptcy(){
+  players.splice(playerIndex-1, 1);
+  exit.push(playerIndex);
+  console.log(players);
+  console.log("index "+playerIndex);
+  handlepopup('other','Declared Bankruptcy','');
+  setTimeout(() => {
+    clearpopup();
+  }, 2000);
+}
+function changeposition(pos){
+  const max_container = 28;
+  let prevpos = players[playerIndex-1].position;
+  console.log('player '+playerIndex+"position :"+players[playerIndex-1].position);
+  if(pos>prevpos){
+    let preposEle = document.getElementById(`pos-cont-${prevpos}`);
+    let contentprev = preposEle.innerHTML;
+    let updatecont =  contentprev.replace(playerIcon[playerIndex-1], '');
+    preposEle.innerHTML=updatecont;
+    players[playerIndex-1].position = pos;
+    let nextposEle = document.getElementById(`pos-cont-${players[playerIndex-1].position}`);
+    nextposEle.innerHTML+= playerIcon[playerIndex-1];
+    if(players[playerIndex-1].position == 10){
+    setplayerjail();
+    setTimeout(() => {
+      handlepopup('jail','You are in jail');
+      console.log('set to jail')
+    }, 3100);
+  }
+  const specialCard = otherCards[players[playerIndex-1].position];
+            console.log(specialCard);
+            if (specialCard) {
+                console.log('special card');
+                setTimeout(() => {
+                    handlesplcard(specialCard[0],total); // Return the name of the special card
+                }, 2000);
+                }
+  }
+  else{
+    let preposEle = document.getElementById(`pos-cont-${prevpos}`);
+    let contentprev = preposEle.innerHTML;
+    let updatecont =  contentprev.replace(playerIcon[playerIndex-1], '');
+    preposEle.innerHTML=updatecont;
+    players[playerIndex-1].position = pos;
+    let nextposEle = document.getElementById(`pos-cont-${players[playerIndex-1].position}`);
+    nextposEle.innerHTML+= playerIcon[playerIndex-1];
+    if(players[playerIndex-1].position!=10){ //no 200 for going to jail
+    addsub(false, 200);
+    handlepopup('other','Salary Received 🤑 200','');}
+    else{
+        setplayerjail();
+        setTimeout(() => {
+      handlepopup('jail','You are in jail');
+      console.log('set to jail')
+    }, 3100);
+         }
+         const specialCard = otherCards[players[playerIndex-1].position];
+            console.log(specialCard);
+            if (specialCard) {
+                console.log('special card');
+                setTimeout(() => {
+                    handlesplcard(specialCard[0],total); // Return the name of the special card
+                }, 2000);
+                }
+    console.log('crossing go');
+  }
+  checkrent();
+}
+function handlejail(rolled){
+    console.log(jail);
+        if(jail[playerIndex][1]>=1 && jail[playerIndex][1]<=2){
+            console.log('player wants to wait for 6');
+            if(rolled != 6){
+                console.log('unlucky');
+                setTimeout(() => {
+                    handlepopup('other','UNLUCKY','TRY NEXT TIME');
+                }, 2000);
+                usermessage(2);
+            }else{
+              setTimeout(() => {
+                    handlepopup('other','LUCKY','');
+                    console.log('lucky')
+                }, 2000);
+            usermessage(2);
+            jail[playerIndex][0] = false;
+            jail[playerIndex][1] = 0;
+            moveplayers(rolled);
+            usermessage(2);
+            }
+        }
+        else if(jail[playerIndex][1] == 3){
+            console.log('unlucky paid 200');
+            setTimeout(() => {
+                handlepopup('other','UNLUCKY','PAID $200');
+            }, 2000);
+            addsub(true, 200);
+            usermessage(2);
+            jail[playerIndex][0] = false;
+            jail[playerIndex][1] = 0;
+            moveplayers(rolled);
+            usermessage(2);
+        }
+        else{
+            moveplayers(rolled);
+            usermessage(2);
+            console.log('else');
+        }
+    }
+function moneyIsLess(){
+  if(players[playerIndex-1].money<0){
+    handlepopup('lessmoney','RePay Or Bankruptcy','');
+  }
+}
+// Start the game
+
+checkcontclick();
+  function checkcontclick(){
+    console.log('card display')
+    var leftcontain = document.getElementById("left-container");
+      // Attach a click event listener to the container
+    leftcontain.addEventListener("click", function(event) {
+      var className = event.target.className;
+      let numericPart = className.match(/\d+/);
+      if (numericPart) {
+        showcards(parseInt(numericPart)+10); // Output: 4
+        console.log(parseInt(numericPart)+10);
+      } else {
+        console.log('No numeric part found');
+      }
+    });
+    var bottomcontain = document.getElementById("bottom-container");
+      // Attach a click event listener to the container
+    bottomcontain.addEventListener("click", function(event) {
+      var className = event.target.className;
+      let numericPart = className.match(/\d+/);
+      if (numericPart) {
+        showcards(parseInt(numericPart)); // Output: 4
+      } else {
+        console.log('No numeric part found');
+      }
+    });
+   var topcontain = document.getElementById("top-container");
+      // Attach a click event listener to the container
+    topcontain.addEventListener("click", function(event) {
+      var className = event.target.className;
+      let numericPart = className.match(/\d+/);
+      if (numericPart) {
+        showcards(parseInt(numericPart)+10+5); // Output: 4
+      } else {
+        console.log('No numeric part found');
+      }
+    });
+       var rightcontain = document.getElementById("right-container");
+      // Attach a click event listener to the container
+    rightcontain.addEventListener("click", function(event) {
+      var className = event.target.className;
+      let numericPart = className.match(/\d+/);
+      if (numericPart) {
+        showcards(parseInt(numericPart)+10+5+9); // Output: 4
+      } else {
+        console.log('No numeric part found');
+      }
+    });
+     }
+     function showcards(pos){
+      var text = cards[pos][0];
+      let s = document.getElementById('card-id');
+      s.style.display='block';
+      var elements = document.querySelector(".cheading");
+      let v=cards[pos][1];
+      console.log(v);
+      elements.textContent=text+' '+'-'+' '+v;
+      var re = document.querySelector(".text-Rent");
+      re.textContent = (v/100)*10;
+      let h1=document.querySelector('.house-value-1');
+      h1.textContent = (v/100)*20;
+      let h2=document.querySelector('.house-value-2');
+      h2.textContent = (v/100)*30;
+      let h3=document.querySelector('.house-value-3');
+      h3.textContent = (v/100)*40;
+    //   setTimeout(() => {
+    //     document.body.addEventListener('click', function(event) {
+    //   const isClickInsidePopup = s.contains(event.target);
+    //   if (!isClickInsidePopup) {
+    // // Close the popup if the click is outside
+    //    s.style.display='none';
+    //   }
+    // // Stop event propagation
+    //  //event.stopPropagation();
+    //  });
+    //   }, 3000);
+  }
+  function closecard(){
+    let s = document.getElementById('card-id');
+      s.style.display='none';
+  }
+  startGame();
+      </script>
+</body>
+</html>
